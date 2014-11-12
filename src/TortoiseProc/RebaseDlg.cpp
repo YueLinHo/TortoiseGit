@@ -982,6 +982,11 @@ int CRebaseDlg::FinishRebase()
 }
 void CRebaseDlg::OnBnClickedContinue()
 {
+	CStringA cmd;
+	cmd.Format("cherry-pick %s", m_Upstream.GetString());
+	int ret = git_run_cmd("cherry-pick", cmd.GetBuffer(0));
+	return;
+
 	if( m_RebaseStage == REBASE_DONE)
 	{
 		OnOK();
