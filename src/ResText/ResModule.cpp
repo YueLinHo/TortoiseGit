@@ -2229,7 +2229,9 @@ size_t CResModule::ScanHeaderFile(const std::wstring & filepath)
 	GetFullPathName(filepath.c_str(), reqLen, wcfullPath.get(), nullptr);
 	std::wstring fullpath = wcfullPath.get();
 
-
+	size_t pos = fullpath.find(';');
+	if (-1 != pos)
+		fullpath.erase(pos, 1);
 	// first treat the file as ASCII and try to get the defines
 	{
 		std::ifstream  fin(fullpath);
