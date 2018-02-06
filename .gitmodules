@@ -1,4 +1,4 @@
-[submodule "ext/apr-util"]
+﻿[submodule "ext/apr-util"]
 	path = ext/apr-util
 	url = https://github.com/apache/apr-util.git
 [submodule "ext/apr"]
